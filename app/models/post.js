@@ -1,26 +1,26 @@
-const Base = require('./baseSql');
+const builder = require('../utils/drivers/sql');
 
-class Post extends Base {
+class Post {
   constructor() {
-    super('posts');
+    this.table = 'posts';
   }
-
   getAllPosts() {
-    return this.connection.select();
+    return builder(this.table).select();
   }
   getAllPostsByImpacterId(impacterId) {
-    return this.connection.select().where({
+    const where = {
       impacter_id: impacterId,
-    });
+    };
+    return builder(this.table).select().where(where);
   }
   updatePost(id, payload) {
-    return this.connection.update(payload).where({
+    return builder(this.table).update(payload).where({
       id,
     });
   }
 
   deletePost(id) {
-    return this.connection.del().where({
+    return builder(this.table).del().where({
       id,
     });
   }

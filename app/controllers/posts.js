@@ -18,6 +18,15 @@ class Posts {
       throw new PlainError(responses.GET_POSTS_FAIL);
     }
   }
+
+  async updatePost(req) {
+    try {
+      const { id } = req.body;
+      await this.model.updatePost(id, req.body);
+    } catch (error) {
+      throw new PlainError(responses.UPDATE_POST_FAIL);
+    }
+  }
 }
 
 module.exports = Posts;
