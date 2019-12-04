@@ -1,8 +1,5 @@
 const knex = require('knex');
 
-const connection = require('../../knexfile');
+const options = require('../../knexfile');
 
-module.exports = knex({
-  client: 'pg',
-  connection,
-});
+module.exports = knex(options);
