@@ -15,9 +15,12 @@ class Post extends Base {
     return this.connection.select().where(where);
   }
   updatePost(id, payload) {
-    return this.connection.update(payload).where({
+    return this.connection.update({
+      ...payload,
+      updated_at: new Date(),
+    }).where({
       id,
-    });
+    }).returning('id');
   }
 
   deletePost(id) {
