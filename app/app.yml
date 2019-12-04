@@ -1,0 +1,4 @@
+apps:
+  - script: /codebase/api/app/bin/www
+    name: service
+    exec_mode: fork

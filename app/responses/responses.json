@@ -1,0 +1,10 @@
+{
+  "DATABASE_ERROR": {
+    "status": "DATABASE_ERORR",
+    "message": "Database error"
+  },
+  "NOT_FOUND": {
+    "status": "NOT_FOUND",
+    "message": "Not found"
+  }
+}
