@@ -5,21 +5,24 @@ class Post extends Base {
     super('posts');
   }
 
-  buildQueryFilters(filters) {
-    const query = { ...filters };
-    return query;
+  getAllPosts() {
+    return this.connection.select();
+  }
+  getAllPostsByImpacterId(impacterId) {
+    return this.connection.select().where({
+      impacter_id: impacterId,
+    });
+  }
+  updatePost(id, payload) {
+    return this.connection.update(payload).where({
+      id,
+    });
   }
 
-  getPosts(filters) {
-    return {};
-  }
-
-  updatePost(filters) {
-
-  }
-
-  deletePost(filters) {
-
+  deletePost(id) {
+    return this.connection.del().where({
+      id,
+    });
   }
 }
 

@@ -6,5 +6,5 @@ const PostController = new Controller();
 
 const router = express.Router();
 
-router.get('/', wrapper(PostController.getAllPosts));
+router.get('/', wrapper(PostController.getPosts.bind(PostController)));
 module.exports = router;
