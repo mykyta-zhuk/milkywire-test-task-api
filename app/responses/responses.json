@@ -6,5 +6,29 @@
   "NOT_FOUND": {
     "status": "NOT_FOUND",
     "message": "Not found"
+  },
+  "GET_POSTS_FAIL": {
+    "status": "GET_POSTS_FAIL",
+    "message": "Can't get posts"
+  },
+  "GET_POSTS_OK": {
+    "status": "GET_POSTS_OK",
+    "message": "Success!"
+  },
+  "UPDATE_POST_OK": {
+    "status": "UPDATE_POST_OK",
+    "message": "Success!"
+  },
+  "UPDATE_POST_FAIL": {
+    "status": "UPDATE_POST_FAIL",
+    "message": "Can't update post"
+  },
+  "DELETE_POST_OK": {
+    "status": "DELETE_POST_OK",
+    "message": "Success!"
+  },
+  "DELETE_POST_FAIL": {
+    "status": "DELETE_POST_FAIL",
+    "message": "Can't delete post"
   }
 }
