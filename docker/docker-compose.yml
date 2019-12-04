@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   
   nodejs:
@@ -9,7 +9,8 @@ services:
       - '../app:/codebase/api/app'
     ports:
       - '3000:3000'
-
+    networks:
+      - test-task
   database:
     build: ./postgresql
     container_name: postgresql
@@ -19,6 +20,11 @@ services:
       - 'database-volume:/var/lib/postgresql/data'
     ports:
       - '5432:5432'
+    networks:
+      - test-task
       
 volumes: 
   database-volume:
+
+networks:
+  test-task:
