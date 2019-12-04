@@ -5,12 +5,20 @@ services:
     build: ./nodejs
     container_name: nodejs
     command: ["pm2-runtime", "/codebase/api/app/app.yml"]
-    env_file:
-      - .env
     volumes:
       - '../app:/codebase/api/app'
     ports:
-      - '80:3000'
+      - '3000:3000'
+
+  database:
+    build: ./postgresql
+    container_name: postgresql
+    env_file:
+      - .env
+    volumes:
+      - 'database-volume:/var/lib/postgresql/data'
+    ports:
+      - '5432:5432'
       
 volumes: 
   database-volume:
