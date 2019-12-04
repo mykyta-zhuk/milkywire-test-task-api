@@ -1,5 +1,9 @@
 const config = require('./utils/config');
 
-module.exports = Object.assign({
-  client: 'postgres',
-}, config.database);
+module.exports = {
+  client: 'pg',
+  connection: config.database,
+  migrations: {
+    tableName: 'migrations',
+  },
+};

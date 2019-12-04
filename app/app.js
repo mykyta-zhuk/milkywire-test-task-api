@@ -29,6 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => { // eslint-disable-line
+  console.log(err);
   const result = Object.assign({}, responses[err.status], err);
   const {
     status,

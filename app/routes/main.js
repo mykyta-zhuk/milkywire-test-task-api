@@ -3,5 +3,5 @@ const wrapper = require('../middlewares/routeWrapper');
 
 const router = express.Router();
 
-router.get('/', wrapper(() => ({ message: 'Watch test' })));
+router.get('/', wrapper(async () => ({ message: 'OK' })));
 module.exports = router;
