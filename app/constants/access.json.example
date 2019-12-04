@@ -1,0 +1,9 @@
+{
+  "database": {
+    "user": "sample",
+    "host": "postgresql",
+    "database": "db",
+    "password": "pwd123",
+    "port": 5432
+  }
+}
