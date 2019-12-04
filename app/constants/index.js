@@ -1,3 +1,4 @@
 const globals = require('./global');
+const access = require('./access');
 
-module.exports = [globals];
+module.exports = [globals, access];

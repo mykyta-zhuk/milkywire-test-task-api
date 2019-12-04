@@ -3,7 +3,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const routes = require('./routes');
-const PlainError = require('./utils/plainError');
+const { PlainError } = require('./utils/errors');
 
 const responses = require('./responses/responses');
 
@@ -29,7 +29,6 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => { // eslint-disable-line
-  console.log(err);
   const result = Object.assign({}, responses[err.status], err);
   const {
     status,
