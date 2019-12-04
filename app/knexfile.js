@@ -6,4 +6,5 @@ module.exports = {
   migrations: {
     tableName: 'migrations',
   },
+  debug: true,
 };
